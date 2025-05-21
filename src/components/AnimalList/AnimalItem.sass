@@ -1,0 +1,17 @@
+@use '../../style/base'
+.animal-item
+    @extend %fxrow
+    @extend %effect-1
+    background: #F5F5FA
+    gap: base.$unit-1x
+
+    border-radius: base.$unit-2x
+
+    &__img
+        width: 8rem
+        margin-top: base.$unit-1x
+
+    &__text-wrapper
+        @extend %fxcol
+        gap: base.$unit-1x
+        padding: base.$unit-1x
