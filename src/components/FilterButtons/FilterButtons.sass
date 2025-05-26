@@ -1,0 +1,21 @@
+@use '../../style/base'
+.filter-buttons
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 0.5rem
+
+    &__button
+        @extend %effect-1
+        height: base.$unit-4x
+        padding-inline: base.$unit-2x
+        border: none
+        border-radius: base.$unit-4x
+        color: #7878AB
+        font-weight: 700
+        cursor: pointer
+        transition: background-color 0.3s ease
+
+        &:hover
+            //box-shadow: none
+            @extend %effect-3
