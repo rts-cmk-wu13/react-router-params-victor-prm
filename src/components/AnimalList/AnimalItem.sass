@@ -8,6 +8,14 @@
 
     border-radius: base.$unit-2x
 
+    h2 a
+        @extend %font-bold
+        color: base.$gray-800
+
+    svg
+        fill: #5533EA
+        margin-right: base.$unit-05x
+
     &__img
         width: 8rem
         margin-top: base.$unit-1x
@@ -22,3 +30,7 @@
         gap: base.$unit-2x
         align-items: center
         text-transform: capitalize
+
+    p
+        @extend %font-regular
+        color: base.$gray-600

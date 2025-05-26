@@ -3,10 +3,39 @@
 
 /* Fonts */
 @font-face
-    font-family: 'Mulish'
-    src: url(../assets/fonts/Mulish/Mulish-VariableFont_wght.ttf) format('truetype')
+    font-family: 'Lato'
+    src: url('../assets/fonts/Lato/Lato-Light.ttf') format('truetype')
+    font-weight: 300
+    font-style: normal
 
-$sans-serif-family: Mulish, Helvetica, Arial, sans-serif
+@font-face
+    font-family: 'Lato'
+    src: url('../assets/fonts/Lato/Lato-Regular.ttf') format('truetype')
+    font-weight: 400
+    font-style: normal
+
+@font-face
+    font-family: 'Lato'
+    src: url('../assets/fonts/Lato/Lato-Bold.ttf') format('truetype')
+    font-weight: 700
+    font-style: normal
+
+$sans-serif-family: 'Lato', Helvetica, Arial, sans-serif
+
+%font-regular
+    font-family: $sans-serif-family
+    font-weight: 300
+    font-style: normal
+
+%font-medium
+    font-family: $sans-serif-family
+    font-weight: 400
+    font-style: normal
+
+%font-bold
+    font-family: $sans-serif-family
+    font-weight: 700
+    font-style: normal
 
 /* Gray base */
 $gray-500: #7f7f7f
@@ -76,7 +105,7 @@ $grid-item-size: 8rem
     scrollbar-width: none
 
 body
-    font-family: Helvetica, Arial, sans-serif
+    @extend %font-regular
 
     max-width: $max-width-page
     margin: 0 auto
@@ -106,7 +135,7 @@ ul li
 
 %clickable-card
     position: relative
-    
+
     a
         text-decoration: none
 
