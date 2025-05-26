@@ -20,7 +20,7 @@ export default function Header() {
                 setData(data)
                 console.log(data)
             })
-            .finally(() => setTimeout(() => setIsLoading(false), 1000))
+            .finally(() => setTimeout(() => setIsLoading(false), 600))
     }, [])
 
 

@@ -1,1 +1,33 @@
 @use '../style/base'
+
+#root
+    @extend %fxcol
+    gap: 0
+    padding: 0
+
+.detail
+    &__background
+        display: grid
+        background: rgba(base.$color-primary-500,0.75)
+
+        &>*
+            grid-area: 1 / 1
+
+    &__pattern
+        width: 100%
+        height: 100%
+        max-height: 20rem
+        object-fit: cover
+        justify-self: center
+        filter: blur(2px)
+        display: block
+        opacity: 0.75
+
+    &__img
+        align-self: end
+        justify-self: center
+        margin-left: 8rem
+        height: 12rem
+        display: block
+        position: relative
+        z-index: 1

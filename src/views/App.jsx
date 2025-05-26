@@ -5,9 +5,9 @@ import Header from '../components/Header/Header'
 export default function App() {
 
   return (
-    <>
-      <Header/>
+    <div className='root-app'>
+      <Header />
       <AnimalList />
-    </>
+    </div>
   )
 }

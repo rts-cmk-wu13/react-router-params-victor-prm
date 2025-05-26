@@ -15,7 +15,7 @@ export default function AnimalList(props) {
                 setData(data)
                 console.log(data)
             })
-            .finally(() => setTimeout(() => setIsLoading(false), 1000))
+            .finally(() => setTimeout(() => setIsLoading(false), 600))
     }, [])
 
     if (isLoading) {

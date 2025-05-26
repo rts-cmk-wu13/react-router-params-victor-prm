@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import './Detail.sass'
-import { useParams } from 'react-router'
+import pattern from '../assets/confetti.svg'
+import { useParams, Link } from 'react-router'
 import LoadingAnimation from '../components/LoadingAnimation/loadingAnimation'
+import { FaLocationDot } from "react-icons/fa6";
 
 export default function Detail() {
+  let cname = 'detail'
   const params = useParams()
-  console.log(params)
 
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -17,20 +19,29 @@ export default function Detail() {
         setData(data)
         console.log(data)
       })
-      .finally(() => setTimeout(() => setIsLoading(false), 1000))
+      .finally(() => setTimeout(() => setIsLoading(false), 600))
   }, [])
 
   if (isLoading) {
     return (
-      <LoadingAnimation/>
+      <LoadingAnimation />
     )
   }
 
 
   return (
-    <>
-      <h1>{data.breed}</h1>
-      <img src={data.image} alt="" />
-    </>
+
+    <div className='root-detail'>
+      <div className={`${cname}__background`}>
+        <img className={`${cname}__pattern`} src={pattern} alt="" />
+        <img className={`${cname}__img`} src={data.image} alt="" />
+      </div>
+      <div div className={`${cname}__content`}>
+        <h1 div className={`${cname}__content-title`}>{data.breed}</h1>
+        <p div className={`${cname}__content-location`}><FaLocationDot className={`${cname}__location-icon`} /> {data.location}</p>
+        <p div className={`${cname}__content-description`} >{data.long_description}</p>
+        <Link to="/">Back</Link>
+      </div>
+    </div>
   )
 }
