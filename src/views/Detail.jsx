@@ -3,7 +3,7 @@ import './Detail.sass'
 import pattern from '../assets/confetti.svg'
 import { useParams, Link } from 'react-router'
 import LoadingAnimation from '../components/LoadingAnimation/loadingAnimation'
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaPaw, FaVenusMars } from "react-icons/fa6";
 
 export default function Detail() {
   let cname = 'detail'
@@ -39,8 +39,18 @@ export default function Detail() {
       <div div className={`${cname}__content`}>
         <h1 div className={`${cname}__content-title`}>{data.breed}</h1>
         <p div className={`${cname}__content-location`}><FaLocationDot className={`${cname}__location-icon`} /> {data.location}</p>
-        <p div className={`${cname}__content-description`} >{data.long_description}</p>
-        <Link to="/">Back</Link>
+        <div className={`${cname}__content-meta-wrapper`}>
+          <div className={`${cname}__content-meta`}>
+            <span className={`${cname}__content-icon-wrap`}><FaPaw className={`${cname}__content-icon-breed`}/></span>
+            <p className={`${cname}__content-meta-text`}>{data.breed}</p>
+          </div>
+          <div className={`${cname}__content-meta`}>
+            <span className={`${cname}__content-icon-wrap`}><FaVenusMars className={`${cname}__content-icon-gender`}/></span>
+            <p className={`${cname}__content-meta-text`}>{data.gender}</p>
+          </div>
+        </div>
+        <p className={`${cname}__content-description`} >{data.long_description}</p>
+        <Link className={`${cname}__back-link`} to="/">Back</Link>
       </div>
     </div>
   )

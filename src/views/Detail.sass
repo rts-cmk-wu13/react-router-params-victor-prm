@@ -1,11 +1,11 @@
 @use '../style/base'
 
-#root
+.root-detail
     @extend %fxcol
-    gap: 0
-    padding: 0
+    min-height: 100dvh
 
 .detail
+
     &__background
         display: grid
         background: rgba(base.$color-primary-500,0.75)
@@ -23,6 +23,14 @@
         display: block
         opacity: 0.75
 
+    &__content-location
+        font-size: 0.825rem
+        color: base.$gray-500
+
+        svg
+            margin-right: base.$unit-1x
+            color: base.$color-primary-500
+
     &__img
         align-self: end
         justify-self: center
@@ -31,3 +39,57 @@
         display: block
         position: relative
         z-index: 1
+
+    &__content
+        @extend %fxcol
+        gap: base.$unit-2x
+        padding:  base.$unit-2x base.$unit-2x  base.$unit-4x
+        color: base.$gray-500
+        flex: 1
+
+        &-title
+            color: base.$gray-800
+
+        &-description
+            line-height: base.$unit-3x
+
+        &-meta
+            @extend %fxrow
+            gap: base.$unit-1x
+            align-items: center
+
+            &-text
+                text-transform: capitalize
+                color: base.$gray-800
+
+            &-wrapper
+                @extend %fxrow
+                gap: base.$unit-2x
+
+        &-icon
+            &-wrap
+                @extend %fxrow
+                @extend %effect-1
+                align-items: center
+                justify-content: center
+                width: base.$unit-5x
+                height: base.$unit-5x
+                border-radius: base.$unit-5x
+            &-gender
+                color: hotpink
+            &-breed
+                color: base.$color-accent
+
+    &__back-link
+        @extend %font-medium
+        @extend %effect-2
+        background: base.$color-primary-500
+        margin: auto auto 0
+        padding: base.$unit-1x base.$unit-2x
+        width: 100%
+        max-width: 25rem
+        border-radius: base.$unit-5x
+        text-align: center
+
+        text-decoration: none
+        color: white
